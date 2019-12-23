@@ -1,0 +1,34 @@
+{
+  "name": "node-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
+  },
+  "keywords": [],
+  "author": "Shivang Patel",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "connect-mongo": "^3.0.0",
+    "cors": "^2.8.5",
+    "ejs": "^3.0.0",
+    "express": "^4.17.1",
+    "express-session": "^1.16.2",
+    "helmet": "^3.21.1",
+    "mongoose": "^5.7.5",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.4",
+    "snyk": "^1.236.1",
+    "stripe": "^7.4.0",
+    "validator": "^12.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.0"
+  },
+  "snyk": true
+}

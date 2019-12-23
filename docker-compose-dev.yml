@@ -1,0 +1,42 @@
+version: "3"
+services:
+  mongodb:
+    container_name: BUSINESS_NAME_mongodb
+    image: mongo
+    logging:
+      driver: none
+    ports:
+      - "27017:27017"
+  mongo-seed:
+    container_name: BUSINESS_NAME_mongo-seed
+    build: ./mongo-seed/
+    volumes:
+      - ./mongo-seed:/usr/src/app
+    depends_on:
+      - mongodb
+    restart: on-failure
+  backend:
+    container_name: BUSINESS_NAME_backend
+    build:
+      context: ./backend/
+      dockerfile: Dockerfile-dev
+    env_file: ./backend/.env
+    environment:
+      - NODE_ENV=development
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./backend:/usr/src/app
+    depends_on:
+      - mongodb
+  frontend:
+    container_name: BUSINESS_NAME_frontend
+    build:
+      context: ./frontend/
+      dockerfile: Dockerfile-dev
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./frontend:/usr/src/app
+    depends_on:
+      - backend

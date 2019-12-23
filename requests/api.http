@@ -1,0 +1,37 @@
+# Orders
+GET http://localhost:5000/api/orders/
+
+###
+
+POST http://localhost:5000/api/orders/
+Content-Type: application/json
+
+{
+    "name": "John Doe",
+    "phone": "1111111111",
+    .........
+}
+
+###
+
+# Cart
+PATCH http://localhost:5000/api/cart/5c5e363e5a9d6c01f159ddf5
+Content-Type: application/json
+
+{
+    "action": "add"
+}
+###
+PATCH http://localhost:5000/api/cart/5c5e363e5a9d6c01f159ddf5
+Content-Type: application/json
+
+{
+    "action": "reduce"
+}
+###
+PATCH http://localhost:5000/api/cart/5c5e363e5a9d6c01f159ddf5
+Content-Type: application/json
+
+{
+    "action": "remove"
+}

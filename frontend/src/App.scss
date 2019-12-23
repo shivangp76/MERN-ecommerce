@@ -1,0 +1,129 @@
+$main-color: #95bc71;
+// $main-color: #b5d09c;
+// $main-color: #b6cda3;
+// $main-color: #b9cf9f;
+// $main-color: #d1ab7f;
+
+body {
+  color: #777;
+  font-family: Poppins, sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.625em;
+  position: relative;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #222;
+  margin: 0 auto;
+  font-weight: 600;
+  line-height: 1.2em;
+}
+
+.primary-btn {
+  background: $main-color;
+  line-height: 42px;
+  padding: 0 30px;
+  border-radius: 25px;
+  border: none;
+  color: #fff;
+  font-weight: 500;
+  position: relative;
+}
+
+.secondary-btn {
+  background: $main-color;
+  line-height: 37px;
+  padding: 0 15px;
+  border-radius: 25px;
+  border: none;
+  color: #fff;
+  font-weight: 500;
+  position: relative;
+}
+
+.banner-area {
+  background: url(./img/cooking.jpg) 50%;
+  /* background: url(./img/banner-bg.jpg) 50%; */
+  background-size: cover;
+  background-attachment: fixed;
+  padding-top: 13rem;
+  padding-bottom: 5rem;
+}
+
+.overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: rgba(4, 9, 30, 0.62);
+  // background: rgba(4, 9, 30, 0.5);
+}
+
+.main-line {
+  color: #fff;
+  font-size: 72px;
+  font-weight: 700;
+  line-height: 1em;
+  margin-top: 20px;
+  padding: 2px 0;
+  border-bottom: 1px solid $main-color;
+  border-top: 1px solid $main-color;
+}
+
+.small-text {
+  color: $main-color;
+  font-weight: 400;
+}
+.review-area {
+  background: url(./img/review-bg.jpg) 50%;
+  background-size: cover;
+  color: #fff;
+}
+
+.footer-area {
+  background: #04091e;
+}
+
+/* NEW STYLES------------------------------------------------------------------------------------------------------------- */
+@media screen and (min-width: 768px) {
+  .navbar {
+    margin: 0.5rem 5rem 0 5rem;
+  }
+  .above-navbar {
+    margin: 2rem 5rem 0 5rem;
+  }
+  .card {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .navbar {
+    margin: 0;
+  }
+  .card {
+    width: 20rem;
+  }
+}
+
+.fix-background {
+  position: relative;
+  z-index: 1;
+}
+
+a,
+a:hover {
+  color: black;
+  text-decoration: none;
+}
+
+.colored-text {
+  color: $main-color;
+}

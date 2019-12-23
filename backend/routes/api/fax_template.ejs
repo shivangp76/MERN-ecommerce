@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head> </head>
+
+  <body>
+    <h3>Order ID: <%=_id%></h3>
+    <h1>Name: <%=name%></h1>
+    <p>Phone Number: <%=phone%></p>
+    <p>Email: <%=email%></p>
+    <p>Notes: <%=notes%></p>
+    <p>
+      Pickup Type (Now or Later): <%=pickupType%> <% if (pickupDay !== "") { %>
+      - <%=pickupDay%> - <%=pickupTime%><% } %>
+    </p>
+    <p>Payment Method: <%=paymentType%></p>
+    <table>
+      <tr>
+        <th>Product Title</th>
+        <th>Attributes</th>
+        <th>Quantity</th>
+        <th>Price</th>
+      </tr>
+      <% items.forEach(function(item) { %> <% if (item.attributes) { %>
+      <tr>
+        <td><h4><%=item.title%></h4></td>
+        <td>
+          <h4>
+            <% for (var key in item.attributes) { %> <% if
+            (item.attributes.hasOwnProperty(key)) { %> <%=key%>:
+            <%=item.attributes[key]%> <% } %> <% } %>
+          </h4>
+        </td>
+        <td><%=item.qty%></td>
+        <td><%=item.price%></td>
+      </tr>
+      <% } else { %>
+      <tr>
+        <td><h4><%=item.title%></h4></td>
+        <td></td>
+        <td><%=item.qty%></td>
+        <td>&#36;<%=item.price%></td>
+      </tr>
+      <% } %> <% }); %>
+    </table>
+
+    <h3>Total Quantity: <%=totalQty%></h3>
+    <h3>Total Price: &#36;<%=totalPrice%></h3>
+  </body>
+</html>
